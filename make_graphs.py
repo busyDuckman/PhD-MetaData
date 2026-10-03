@@ -2,10 +2,10 @@
 """Render the thesis meta-data graphs from analysis_of_backups.csv.
 
 Usage:
-    python make_graphs.py      (or ./make_graphs.py)
+    python make_graphs.py
 
 On first run it creates ./.venv and installs requirements.txt into it, then
-re-runs itself inside that venv. Writes each graph to ./graphs/ as PNG.
+re-runs itself inside that venv. Writes each graph to ./graphs/ as a .png.
 """
 
 import os
@@ -62,9 +62,9 @@ STAGES = [
 NEUTRAL_STAGE = "EXAMINERS_COMMENTS"
 RECOVERY_STAGE = "DOCUMENT_RECOVERY"  # clear, with red diagonal hatching
 
-# In the CSV, SUPERVISOR_REVIEW marks work addressing supervisor comments, not a
-# section of the thesis. Those rows carry on the subject before them, and after
-# the first completed version (v9) the work was proof reading.
+# In the CSV, SUPERVISOR_REVIEW marks mean work addressing supervisor comments.
+#   - Those rows carry on the subject before them.
+#   - After the first completed version (v9) the activity was "proof reading".
 SUPERVISOR_STAGE = "SUPERVISOR_REVIEW"
 PROOF_STAGE = "PROOF_READING"
 FIRST_COMPLETE = 9
